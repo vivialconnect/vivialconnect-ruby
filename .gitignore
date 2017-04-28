@@ -14,3 +14,7 @@
 .env
 
 .DS_Store
+
+/docs/created.rid
+
+*.gz

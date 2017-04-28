@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# author: https://github.com/bmlvx
+# author: Boris Musa (https://github.com/bmlvx)
 
 set -o errexit; set -o nounset; set -o pipefail
 
@@ -46,7 +46,7 @@ fi
 # Make sure docs are built
 if [ ! -f "${html_docs}/index.html" ]; then
     printf "${RED}Unable to find html docs in the ${html_docs} directory${NC}\n"
-    printf "${RED}Make sure you run make clean && make docs command before \
+    printf "${RED}Make sure you run the rdoc lib command before \
 publishing documentation to the gh-pages branch${NC}\n"; echo
     exit 2
 fi
