@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class VivialConnect::Client - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#class-VivialConnect::Client-label-.configure-28api_key-2C+api_secret-2C+account_id-2C+host-3D-22https-3A-2F-2Fapi.vivialconnect.net-2Fapi-2F-22-2C+api_version-3D-22v1.0-22+-29">.configure(api_key, api_secret, account_id, host=“<a href="https://api.vivialconnect.net/api">api.vivialconnect.net/api</a>/”, api_version=“v1.0” )</a>
+    <li><a href="#class-VivialConnect::Client-label-.reset">.reset</a>
+    <li><a href="#class-VivialConnect::Client-label-23reset_api_base_path-28new_host-2C+new_api_version-29">#reset_api_base_path(new_host, new_api_version)</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-VivialConnect::Client">
+  <h1 id="class-VivialConnect::Client" class="class">
+    class VivialConnect::Client
+  </h1>
+
+  <section class="description">
+    
+<h3 id="class-VivialConnect::Client-label-.configure-28api_key-2C+api_secret-2C+account_id-2C+host-3D-22https-3A-2F-2Fapi.vivialconnect.net-2Fapi-2F-22-2C+api_version-3D-22v1.0-22+-29">.configure(api_key, api_secret, account_id, host=“<a href="https://api.vivialconnect.net/api">api.vivialconnect.net/api</a>/”, api_version=“v1.0” )<span><a href="#class-VivialConnect::Client-label-.configure-28api_key-2C+api_secret-2C+account_id-2C+host-3D-22https-3A-2F-2Fapi.vivialconnect.net-2Fapi-2F-22-2C+api_version-3D-22v1.0-22+-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Configures the client with your `api_key`, `api_secret`, `account_id`,
+`host`, and `api_version`</p>
+
+<pre>Required parameters:
+
+api_key     | String | &quot;YOURAPIKEY&quot;
+api_secret  | String | &quot;YOURAPISECRET&quot;
+account_id  | Fixnum | 100000
+
+Optional parameters:
+
+host        | String | &quot;baseapiurl&quot; 
+api_version | String | &quot;v1.9&quot;
+
+NOTE: default host is &quot;https://api.vivialconnect.net/api/&quot; and default version is &quot;v1.0&quot;
+
+Example usage:
+
+VivialConnect::Client.configure(API_KEY, API_SECRET, ACCOUNT_ID)
+=&gt; true
+
+NOTE: .configure does not check if your credentials are good, it merely checks that you have entered values for them</pre>
+
+<h3 id="class-VivialConnect::Client-label-.reset">.reset<span><a href="#class-VivialConnect::Client-label-.reset">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Resets all of the configuration values to nil. This gives you a blank slate
+client to call .configure on.</p>
+
+<pre>Example usage
+
+VivialConnect::Client.reset
+=&gt; true</pre>
+
+<h3 id="class-VivialConnect::Client-label-23reset_api_base_path-28new_host-2C+new_api_version-29">#reset_api_base_path(new_host, new_api_version)<span><a href="#class-VivialConnect::Client-label-23reset_api_base_path-28new_host-2C+new_api_version-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Resets the api base path (host + api_version) on an instantiated client
+instance</p>
+
+<pre>Required paramters:
+
+new_host        | String | &quot;https://api.vivialconnect.net/api/&quot;
+new_api_version | String | &quot;v1.1&quot;
+
+Example usage
+
+VivialConnect::Client.instance.reset_api_base_path(&quot;https://api.vivialconnect.net/api/&quot;, &quot;v1.1&quot; )
+=&gt; true</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

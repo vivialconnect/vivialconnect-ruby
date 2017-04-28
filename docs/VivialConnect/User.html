@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class VivialConnect::User - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#class-VivialConnect::User-label-.all">.all</a>
+    <li><a href="#class-VivialConnect::User-label-.count">.count</a>
+    <li><a href="#class-VivialConnect::User-label-.find-28id-29">.find(id)</a>
+    <li><a href="#class-VivialConnect::User-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29">.find_each(start: 1, finish: nil, batch_size: 150)</a>
+    <li><a href="#class-VivialConnect::User-label-.find_in_batches-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29++">.find_in_batches(start: 1, finish: nil, batch_size: 150)  </a>
+    <li><a href="#class-VivialConnect::User-label-.update_password-28id-2C+old_pw-2C+new_pw-29">.update_password(id, old_pw, new_pw)</a>
+    <li><a href="#class-VivialConnect::User-label-23update_password-28old_pw-2C+new_pw-29">#update_password(old_pw, new_pw)</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Resource
+  
+</div>
+
+    
+    
+    
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-VivialConnect::User">
+  <h1 id="class-VivialConnect::User" class="class">
+    class VivialConnect::User
+  </h1>
+
+  <section class="description">
+    
+<h3 id="class-VivialConnect::User-label-.all">.all<span><a href="#class-VivialConnect::User-label-.all">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Returns an array containing ruby objects corresponding to all <a
+href="User.html">User</a> resources on your account</p>
+
+<pre>Example usage:
+
+VivialConnect::User.all
+=&gt; [#&lt;VivialConnect::User account_id=1XXXX, active=true, api_key=&quot;User&#39;s Api Key&quot;, date_created=&quot;2017-04-25T09:37:47-04:00&quot;, date_modified=&quot;2017-04-25T09:38:09-04:00&quot;, email=&quot;btester@vivial.net&quot;, first_name=&quot;Bob&quot;, id=1XXXX, last_name=&quot;Test&quot;, roles=[{&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;description&quot;=&gt;&quot;Account administrator role&quot;, &quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;AccountAdministrator&quot;, &quot;role_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;description&quot;=&gt;&quot;User role&quot;, &quot;id&quot;=&gt;X, &quot;name&quot;=&gt;&quot;User&quot;, &quot;role_type&quot;=&gt;&quot;client&quot;}], timezone=&quot;US/Eastern&quot;, username=&quot;btester&quot;, verified=true&gt;]</pre>
+
+<h3 id="class-VivialConnect::User-label-.count">.count<span><a href="#class-VivialConnect::User-label-.count">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Returns the number of users associated with your account.</p>
+
+<pre>Example usage:
+
+VivialConnect::User.count
+=&gt; 7</pre>
+
+<h3 id="class-VivialConnect::User-label-.find-28id-29">.find(id)<span><a href="#class-VivialConnect::User-label-.find-28id-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Returns <a href="User.html">User</a> object with the id provided</p>
+
+<pre>Required parameter:
+
+id | Fixnum | 726
+
+Example usage:
+
+VivialConnect::User.find(726)
+=&gt; #&lt;VivialConnect::User account_id=1XXXX, active=true, api_key=&quot;apikey&quot;, date_created=&quot;2016-12-28T11:14:58-05:00&quot;, date_modified=&quot;2017-04-25T11:59:04-04:00&quot;, email=&quot;btester@vivial.net&quot;, first_name=&quot;Bob&quot;, id=1XXXX, last_name=&quot;Tester&quot;, roles=[{&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;description&quot;=&gt;&quot;Account administrator role&quot;, &quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;AccountAdministrator&quot;, &quot;role_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;description&quot;=&gt;&quot;User role&quot;, &quot;id&quot;=&gt;4, &quot;name&quot;=&gt;&quot;User&quot;, &quot;role_type&quot;=&gt;&quot;client&quot;}], timezone=&quot;US/Eastern&quot;, username=&quot;btester&quot;, verified=true&gt;</pre>
+
+<h3 id="class-VivialConnect::User-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29">.find_each(start: 1, finish: nil, batch_size: 150)<span><a href="#class-VivialConnect::User-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Iterates through all of the users on your account in N sized batches and
+returns an array containing all the users beginning at the `start: value`
+and ending at the `finish: value`.</p>
+
+<pre>When a block is given this method yields an individual User object. 
+Without a block, this method returns an Enumerator. 
+
+By default, it will begin at the first userr and end at the last user
+
+With default batch_size: 150, if you wanted to get your records from
+150 to 300 you would start at 2 and finish at 2.
+
+Returns an Array of objects corresponding to the `start` and `finish` values. Default is all objects.
+
+Optional parameters:
+
+start      | Fixnum | batch to start with
+finish     | Fixnum | batch to end with
+batch_size | Fixnum | between 1..150
+
+Example usage:
+
+VivialConnect::User.find_each {|user| puts user.username}
+janeuser
+=&gt; [#&lt;VivialConnect::User account_id=1XXXX&gt;,  ... ]</pre>
+
+<h3 id="class-VivialConnect::User-label-.find_in_batches-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29++">.find_in_batches(start: 1, finish: nil, batch_size: 150)  <span><a href="#class-VivialConnect::User-label-.find_in_batches-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29++">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Iterates through all of the user on your account in N sized batches and
+returns an array containing all the users beginning at the `start: value`
+and ending at the `finish: value`.</p>
+
+<pre>When a block is given this method yields an array of batch_size resource objects. 
+Without a block, it returns an Enumerator.
+
+By default, it will begin at the first user and end at the last user
+
+With default batch_size: 150, if you wanted to get your records from
+150 to 300 you would start at 2 and finish at 2.
+
+Returns an Array of objects corresponding to the `start` and `finish` values. Default is all objects.
+
+Optional parameters:
+
+start      | Fixnum | batch to start with
+finish     | Fixnum | batch to end with
+batch_size | Fixnum | between 1..150
+
+Example usage:
+
+VivialConnect::User.find_in_batches {|batch| do_something_with_an_array(batch)}
+=&gt; [#&lt;VivialConnect::User account_id=1XXXX&gt; , ... ]</pre>
+
+<h3 id="class-VivialConnect::User-label-.update_password-28id-2C+old_pw-2C+new_pw-29">.update_password(id, old_pw, new_pw)<span><a href="#class-VivialConnect::User-label-.update_password-28id-2C+old_pw-2C+new_pw-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>updates the password for the user with the id passed.</p>
+
+<pre>Example usage:
+
+VivialConnect::User.update_password(928, &quot;oldpassword&quot;, &quot;newpassword&quot;)
+=&gt; true</pre>
+
+<h3 id="class-VivialConnect::User-label-23update_password-28old_pw-2C+new_pw-29">#update_password(old_pw, new_pw)<span><a href="#class-VivialConnect::User-label-23update_password-28old_pw-2C+new_pw-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>updates the password for the user object referenced</p>
+
+<pre>Example usage:
+
+user = User.find(1)
+user.update_password(&quot;oldpassword&quot;, &quot;newpassword&quot;)
+=&gt; true
+
+NOTE: there is no need to call .save here. This method updates the database.</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
