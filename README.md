@@ -66,7 +66,7 @@ Quickstart from zero to sending your first message:
 
   The script will buy your first number and send your first message.
 
-5. Check out the [docs](https://github.com/vivialconnect/vivialconnect-ruby) for example usage for every method.
+5. Check out the [docs](https://vivialconnect.github.io/vivialconnect-ruby/) for example usage for every method.
 
 
 ## Contributing
