@@ -68,6 +68,8 @@
     <li><a href="#class-VivialConnect::Number-label-.local">.local</a>
     <li><a href="#class-VivialConnect::Number-label-.lookup-28number-29">.lookup(number)</a>
     <li><a href="#class-VivialConnect::Number-label-.update-28id-2C+options-3D-7B-7D-29">.update(id, options={})</a>
+    <li><a href="#class-VivialConnect::Number-label-23delete">#delete</a>
+    <li><a href="#class-VivialConnect::Number-label-23save">#save</a>
   </ul>
 </div>
 
@@ -308,6 +310,27 @@ Example usage:
 
 VivialConnect::Number.update(875, name: &quot;Dr. Jones&quot;)
 =&gt; #&lt;VivialConnect::Number account_id=10096, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;ALMELUND&quot;, date_created=&quot;2017-04-25T10:22:07-04:00&quot;, date_modified=&quot;2017-04-25T10:41:16-04:00&quot;, id=69, lata=nil, master_account_id=1XXXX, message_status_callback=nil, name=&quot;Dr. Jones&quot;, phone_number=&quot;+16123151041&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;TWINCITIES&quot;, region=&quot;MN&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, message_status_callback=nil, name=&quot;(412) 433-0365&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt;</pre>
+
+<h3 id="class-VivialConnect::Number-label-23delete">#delete<span><a href="#class-VivialConnect::Number-label-23delete">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre>Deletes a Number object. WARNING: this cannot be undone. Once the number is released from your account it can be aquired by other users.
+
+Example usage:
+
+number = VivialConnect::Number.find(1)
+number.delete
+=&gt; true</pre>
+
+<h3 id="class-VivialConnect::Number-label-23save">#save<span><a href="#class-VivialConnect::Number-label-23save">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre>Creates a number associated with your main account or updates an existing one
+
+Example usage:
+
+number = VivialConnect::Number.find(2)
+number.name = &quot;new name for this number&quot;
+number.save
+=&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, message_status_callback=nil, name=&quot;new name for this number&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt;</pre>
 
   </section>
 
