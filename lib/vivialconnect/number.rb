@@ -254,6 +254,33 @@ module VivialConnect
   # VivialConnect::Number.update(875, name: "Dr. Jones")
   # => #<VivialConnect::Number account_id=10096, active=true, address_requirements="none", capabilities={"mms"=>true, "sms"=>true, "voice"=>true}, city="ALMELUND", date_created="2017-04-25T10:22:07-04:00", date_modified="2017-04-25T10:41:16-04:00", id=69, lata=nil, master_account_id=1XXXX, message_status_callback=nil, name="Dr. Jones", phone_number="+16123151041", phone_number_type="local", rate_center="TWINCITIES", region="MN", sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil> #<VivialConnect::Number account_id=1XXXX, active=true, address_requirements="none", capabilities={"mms"=>true, "sms"=>true, "voice"=>true}, city="PITTSBURGH ", date_created="2017-04-25T09:56:04-04:00", date_modified="2017-04-25T09:56:04-04:00", id=66, lata=nil, master_account_id=10096, message_status_callback=nil, name="(412) 433-0365", phone_number="+14124330365", phone_number_type="local", rate_center="PTTSBGZON1", region="PA", sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil>
   #
+  #
+  #===  \#delete
+  #
+  # Deletes a Number object. WARNING: this cannot be undone. Once the number is released from your account it can be aquired by other users.
+  #
+  #
+  # Example usage:
+  #
+  #
+  # number = VivialConnect::Number.find(1)
+  # number.delete
+  # => true
+  #
+  #   
+  #===  \#save
+  #
+  # Creates a number associated with your main account or updates an existing one
+  #
+  #
+  # Example usage:
+  #
+  # number = VivialConnect::Number.find(2)
+  # number.name = "new name for this number"
+  # number.save
+  # => #<VivialConnect::Number account_id=1XXXX, active=true, address_requirements="none", capabilities={"mms"=>true, "sms"=>true, "voice"=>true}, city="PITTSBURGH ", date_created="2017-04-25T09:56:04-04:00", date_modified="2017-04-25T09:56:04-04:00", id=66, lata=nil, master_account_id=10096, message_status_callback=nil, name="new name for this number", phone_number="+14124330365", phone_number_type="local", rate_center="PTTSBGZON1", region="PA", sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil>
+  #
+  #
  
   class Number < Resource
 

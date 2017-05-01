@@ -64,4 +64,7 @@ git push origin gh-pages
 
 rm -fr "${tmp_clone_location}"
 
+cd "${SCRIPT_PATH}"
+
+rm -r docs 
 exit 0
