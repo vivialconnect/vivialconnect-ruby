@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'vivialconnect/version'
 
-# uncomment if you want to use it and make your .env file if you want to use it in development
+# uncomment and make your .env file if you want to use it in development
 # require 'dotenv/load'
 
 Gem::Specification.new do |spec|

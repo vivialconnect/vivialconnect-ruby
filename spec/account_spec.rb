@@ -28,7 +28,4 @@ RSpec.describe VivialConnect::Account do
     expect(VivialConnect::Account).to respond_to(:delete) 
   end 
 
-  it "responds to .subaccounts" do
-    expect(VivialConnect::Account).to respond_to(:subaccounts) 
-  end
 end

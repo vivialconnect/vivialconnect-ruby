@@ -13,6 +13,8 @@
 
 .env
 
+*.gem
+
 .DS_Store
 
 /docs/created.rid
