@@ -21,7 +21,7 @@ RSpec.describe VivialConnect::Client do
 
   context ".reset" do 
     it "nils out the set up variables to start fresh" do 
-      VivialConnect::Client.reset 
+      VivialConnect::Client.instance.reset 
       expect(VivialConnect::Client.class_variable_get(:@@api_key)).to eq(nil)
       expect(VivialConnect::Client.class_variable_get(:@@api_secret)).to eq(nil)
       expect(VivialConnect::Client.class_variable_get(:@@account_id)).to eq(nil)
@@ -271,8 +271,6 @@ RSpec.describe VivialConnect::Client do
 
       # accounts 
       expect(@client.get_request_path('/accounts/count').path).to eq('/api/v1.0/accounts/999/accounts/count')
-      expect(@client.get_request_path('/subaccounts.json').path).to eq('/api/v1.0/accounts/999/subaccounts.json')
-      expect(@client.get_request_path('/users/register.json').path).to eq('/api/v1.0/accounts/999/users/register.json')
        
     end 
 
@@ -291,7 +289,6 @@ RSpec.describe VivialConnect::Client do
 
     it "should return the right response class based request path" do 
       expect(@client.choose_response_class('/api/v1.0/accounts.json')).to be(VivialConnect::Account)
-      expect(@client.choose_response_class('/api/v1.0/accounts/999/subaccounts.json')).to be(VivialConnect::Account)
       expect(@client.choose_response_class('/api/v1.0/accounts/999/attachments.json')).to be(VivialConnect::Attachment)
       expect(@client.choose_response_class('/api/v1.0/accounts/999/configurations.json')).to be(VivialConnect::Configuration)
       expect(@client.choose_response_class('/api/v1.0/accounts/999/logs.json')).to be(VivialConnect::Log)
@@ -332,7 +329,6 @@ RSpec.describe VivialConnect::Client do
     end 
 
   end
-
 
 
 

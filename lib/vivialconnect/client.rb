@@ -34,7 +34,7 @@ module VivialConnect
   # => true
   #
   # NOTE: .configure does not check if your credentials are good, it merely checks that you have entered values for them
-  #===  .reset
+  #===  #reset
   #
   #Resets all of the configuration values to nil. This gives you a blank slate client to call .configure on.
   #
@@ -42,7 +42,7 @@ module VivialConnect
   # Example usage
   #
   #
-  # VivialConnect::Client.reset
+  # VivialConnect::Client.instance.reset
   # => true
   #
   #
@@ -72,7 +72,6 @@ module VivialConnect
     def initialize
       begin 
         @base_api_path = host + "#{api_version}/"
-        connection
       rescue NameError => e
         raise VivialConnectClientError, "Please configure client before making requests. You can do this like so: .configure(api_key, api_secret, account_id) to "
       end
@@ -88,14 +87,16 @@ module VivialConnect
       true
     end
 
-    def self.reset
+    def reset
       @@api_key= nil
       @@api_secret = nil
       @@account_id = nil
       @@host = nil
       @@api_version = nil
       @@configured = false
-      @base_api_path = nil
+      self.instance_variables.each do |ivar|
+        self.remove_instance_variable(ivar)
+      end
       true
     end
 
@@ -125,7 +126,6 @@ module VivialConnect
     def base_api_path
       @base_api_path
     end 
-
 
     def self.configured?
       @@configured == true
@@ -268,10 +268,6 @@ module VivialConnect
             #return an array of resource objects
             response_array = api_response[api_response.keys.first]
             api_response = process_array(response_array, response_class)
-          elsif url.path.split("/")[-1] == "subaccounts.json"
-            #handle subaccounts array
-            response_array = api_response[api_response.keys.first]['accounts']
-            api_response = process_array(response_array, response_class)
           elsif api_response[api_response.keys[1]].is_a?(Array)
             #handle Log resource, return last key and an array full of log objects
             last_key = api_response['last_key']
@@ -308,8 +304,6 @@ module VivialConnect
         return Account 
       elsif url.include?('attachments')
         return Attachment
-      elsif url.include?('subaccounts')
-        return Account
       else 
         api_resource = url[5]
         #exceptions needed for resources requiring camelcase

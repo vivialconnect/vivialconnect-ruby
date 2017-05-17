@@ -1,66 +1,8 @@
 module VivialConnect
   ##
-  #=== .add_main_contact_to_subaccount(options={})
-  #
-  #Creates a new contact and adds it as the main contact to a subaccount.
-  #
-  # Required parameters:
-  #
-  # account_id   | Fixnum | 123456 (subaccount id)
-  # company_name | String | "App Developer Inc." 
-  # first_name   | String | "Bob"
-  # last_name    | String | "Tester"
-  # email        | String | "btester@vivialconnect"                   
-  #
-  # 
-  # Optional parameters:
-  #
-  # address1     | String | "500 Office Building Ln"
-  # address2     | String | "Suite 300"
-  # address3     | String | "c/o Front Desk"
-  # city         | String | "Columbia Heights"
-  # country      | String | "United States"
-  # state        | String | "Minnesota"
-  # postal_code  | String | "55421"
-  # title        | String | "CMO"
-  # work_phone   | String | "+1XXXXXXXXXX"
-  # mobile_phone | String | "+1XXXXXXXXXX"
-  # fax          | String | "+1XXXXXXXXXX"
-  #
-  # Example Usage
-  #
-  #
-  # VivialConnect::Account.add_main_contact_to_subaccount(email: "btester@vivialconnect", contact_type:"main", company_name: "Acme")
-  # => #<VivialConnect::Contact account_id=1XXXX, active=true, address1=nil, address2=nil, address3=nil, city=nil, company_name="Acme", contact_type="main", country="United States", date_created="2017-04-21T10:51:50-04:00", date_modified="2017-04-21T10:51:50-04:00", email="btester@vivialconnect", fax=nil, first_name="Bob", id=89, last_name="Tester", mobile_phone=nil, postal_code="55421", state=nil, title=nil, work_phone="+1XXXXXXXXXX"> 
-  #
-  #
-  ##
-  #=== .add_user_to_subaccount(options={})
-  #
-  #Creates a new User and adds it to a subaccount.
-  #
-  #
-  # Required parameters:                                                             
-  #
-  #
-  # first_name   | String | "Bob"
-  # last_name    | String | "Tester"
-  # email        | String | "btester@vivialconnect"                     
-  # username     | String | "btester"
-  # password     | String | "dlrowolleh"
-  # 
-  #
-  # Example Usage
-  #
-  #
-  # VivialConnect::Account.add_user_to_subaccount(account_id: 1XXXX, email: "btester@vivialconnect.net", username: "btester", first_name: "Bob", last_name: "Tester", password: "XXXXXXX")
-  # => #<VivialConnect::User account_id=1XXXX, active=true, api_key="XYZYXZYXYZXYXZYXZYXYZYXYZYXYZYXYZYX", date_created="2017-04-21T11:27:16-04:00", date_modified="2017-04-21T11:27:16-04:00", email="btester@vivialconnect.net", first_name="Bob", id=10093, last_name="Tester", roles=[{"active"=>true, "date_created"=>"2016-09-30T19:42:59-04:00", "date_modified"=>"2016-09-30T19:42:59-04:00", "description"=>"User role", "id"=>4, "name"=>"User", "role_type"=>"client"}], timezone="US/Eastern", username="btester", verified=false> 
-  #
-  # Note: This method triggers an email to the created user's account. They need to answer this confirmation email before they will be able to log in.
-  ##
   #=== .all
   #
-  #Returns an array containing ruby objects corresponding to all Account resources associated with your account i.e. main account and associated subaccounts
+  #Returns an array containing ruby objects corresponding to all Account resources associated with your account
   #
   #
   # Example usage:
@@ -80,28 +22,6 @@ module VivialConnect
   # VivialConnect::Account.count
   # => 5
   #
-  #
-  ##
-  #=== .create(options={})
-  #
-  #Creates a subaccount tied to your main account
-  #
-  #
-  # Required parameters:                                                                  
-  #
-  #
-  # company_name | String | "App Developer Inc."                    
-  #
-  # 
-  # Example Usage
-  #
-  #
-  # VivialConnect::Account.create(company_name: "App Developer Inc.")
-  # => #<VivialConnect::Account account_id=1XXXX, accounts=[], active=true, company_name="App Developer Inc.", contacts=[], date_created="2017-04-20T17:07:08-04:00", date_modified="2017-04-20T17:07:08-04:00", id=10086, services=[{"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"SMS service", "id"=>1, "name"=>"sms", "service_type"=>"client"}, {"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"Account service", "id"=>2, "name"=>"accounts", "service_type"=>"client"}, {"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"Public service", "id"=>3, "name"=>"public", "service_type"=>"client"}]> 
-  #
-  #
-  # Note: When creating subaccounts, the `id` refers to the subaccount id, whereas the `account_id` refers to the main account.
-  #  
   #
   ##
   #=== .find(id)
@@ -191,19 +111,6 @@ module VivialConnect
   #
   #
   ##
-  #=== .subaccounts
-  #
-  #Returns an array containing ruby objects containing all associated subaccounts
-  #
-  #
-  # Example usage:
-  #
-  #
-  # VivialConnect::Account.subaccounts
-  # => [#<VivialConnect::Account>, #<VivialConnect::Account>, #<VivialConnect::Account>]
-  #
-  #
-  ##
   #=== .update(id, options={})
   #
   #  Required parameters:
@@ -218,59 +125,8 @@ module VivialConnect
   # => #<VivialConnect::Account account_id=1XXXX, accounts=[], active=true, company_name="New Name", contacts=[], date_created="2017-04-20T17:07:08-04:00", date_modified="2017-04-20T17:07:08-04:00", id=10086, services=[{"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"SMS service", "id"=>1, "name"=>"sms", "service_type"=>"client"}, {"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"Account service", "id"=>2, "name"=>"accounts", "service_type"=>"client"}, {"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"Public service", "id"=>3, "name"=>"public", "service_type"=>"client"}]> 
   #
   #
-  ##
-  #===  \#save
-  #
-  # Creates a subaccount associated with your main account or updates an existing one
-  #
-  #
-  # Example usage:
-  #
-  # account = VivialConnect::Account.new
-  # account.company_name = "B Tester QA Inc."
-  # account.save 
-  # => #<VivialConnect::Account account_id=1XXXX, accounts=[], active=true, company_name="B Tester QA Inc.", contacts=[], date_created="2017-04-20T17:07:08-04:00", date_modified="2017-04-20T17:07:08-04:00", id=10086, services=[{"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"SMS service", "id"=>1, "name"=>"sms", "service_type"=>"client"}, {"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"Account service", "id"=>2, "name"=>"accounts", "service_type"=>"client"}, {"active"=>true, "date_created"=>"2016-09-30T19:42:58-04:00", "date_modified"=>"2016-09-30T19:42:58-04:00", "description"=>"Public service", "id"=>3, "name"=>"public", "service_type"=>"client"}]> 
-  #
-  #
+
   class Account < Resource
-
-    def self.subaccounts # :nodoc:
-      uri = '/subaccounts.json'
-      VivialConnect::Client.instance.make_request('GET', uri)
-    end
-
-    def self.add_main_contact_to_subaccount(options={}) # :nodoc:
-      raise VivialConnectClientError, "you must include an account_id parameter" if !options.keys.include?(:account_id)
-
-      # This call must be made from the subaccount, so the client's account_id has to be updated
-      main_account_id = VivialConnect::Client.instance.account_id
-  
-      VivialConnect::Client.instance.account_id = options[:account_id]
-      uri = '/contacts.json'
-      options[:contact_type] = 'main'
-      data = {}
-      data[:contact] = options 
-      data = data.to_json
-
-      begin 
-        response = VivialConnect::Client.instance.make_request('POST', uri, data)
-      ensure
-        # client's account_id must be set back for future calls to work 
-        VivialConnect::Client.instance.account_id = main_account_id
-      end
-
-      response
-    end
-
-    def self.add_user_to_subaccount(options={}) # :nodoc:
-      raise VivialConnectClientError, "you must include an account_id parameter" if !options.keys.include?(:account_id)
-      uri = '/users/register.json'
-      options[:role] = 'User'
-      data = {}
-      data[:user] = options 
-      data = data.to_json
-      response = VivialConnect::Client.instance.make_request('POST', uri, data)
-    end
 
   end
 end
