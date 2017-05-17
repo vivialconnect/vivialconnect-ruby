@@ -57,7 +57,7 @@
 
   <ul class="link-list" role="directory">
     <li><a href="#class-VivialConnect::Client-label-.configure-28api_key-2C+api_secret-2C+account_id-2C+host-3D-22https-3A-2F-2Fapi.vivialconnect.net-2Fapi-2F-22-2C+api_version-3D-22v1.0-22+-29">.configure(api_key, api_secret, account_id, host=“<a href="https://api.vivialconnect.net/api">api.vivialconnect.net/api</a>/”, api_version=“v1.0” )</a>
-    <li><a href="#class-VivialConnect::Client-label-.reset">.reset</a>
+    <li><a href="#class-VivialConnect::Client-label-23reset">#reset</a>
     <li><a href="#class-VivialConnect::Client-label-23reset_api_base_path-28new_host-2C+new_api_version-29">#reset_api_base_path(new_host, new_api_version)</a>
   </ul>
 </div>
@@ -111,14 +111,14 @@ VivialConnect::Client.configure(API_KEY, API_SECRET, ACCOUNT_ID)
 
 NOTE: .configure does not check if your credentials are good, it merely checks that you have entered values for them</pre>
 
-<h3 id="class-VivialConnect::Client-label-.reset">.reset<span><a href="#class-VivialConnect::Client-label-.reset">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<h3 id="class-VivialConnect::Client-label-23reset">reset<span><a href="#class-VivialConnect::Client-label-23reset">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>Resets all of the configuration values to nil. This gives you a blank slate
 client to call .configure on.</p>
 
 <pre>Example usage
 
-VivialConnect::Client.reset
+VivialConnect::Client.instance.reset
 =&gt; true</pre>
 
 <h3 id="class-VivialConnect::Client-label-23reset_api_base_path-28new_host-2C+new_api_version-29">#reset_api_base_path(new_host, new_api_version)<span><a href="#class-VivialConnect::Client-label-23reset_api_base_path-28new_host-2C+new_api_version-29">&para;</a> <a href="#top">&uarr;</a></span></h3>

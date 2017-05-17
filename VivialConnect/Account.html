@@ -56,17 +56,12 @@
   <h3>Table of Contents</h3>
 
   <ul class="link-list" role="directory">
-    <li><a href="#class-VivialConnect::Account-label-.add_main_contact_to_subaccount-28options-3D-7B-7D-29">.add_main_contact_to_subaccount(options={})</a>
-    <li><a href="#class-VivialConnect::Account-label-.add_user_to_subaccount-28options-3D-7B-7D-29">.add_user_to_subaccount(options={})</a>
     <li><a href="#class-VivialConnect::Account-label-.all">.all</a>
     <li><a href="#class-VivialConnect::Account-label-.count">.count</a>
-    <li><a href="#class-VivialConnect::Account-label-.create-28options-3D-7B-7D-29">.create(options={})</a>
     <li><a href="#class-VivialConnect::Account-label-.find-28id-29">.find(id)</a>
     <li><a href="#class-VivialConnect::Account-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29+">.find_each(start: 1, finish: nil, batch_size: 150) </a>
     <li><a href="#class-VivialConnect::Account-label-.find_in_batches-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29++">.find_in_batches(start: 1, finish: nil, batch_size: 150)  </a>
-    <li><a href="#class-VivialConnect::Account-label-.subaccounts">.subaccounts</a>
     <li><a href="#class-VivialConnect::Account-label-.update-28id-2C+options-3D-7B-7D-29">.update(id, options={})</a>
-    <li><a href="#class-VivialConnect::Account-label-23save">#save</a>
   </ul>
 </div>
 
@@ -94,61 +89,10 @@
 
   <section class="description">
     
-<h3 id="class-VivialConnect::Account-label-.add_main_contact_to_subaccount-28options-3D-7B-7D-29">.add_main_contact_to_subaccount(options={})<span><a href="#class-VivialConnect::Account-label-.add_main_contact_to_subaccount-28options-3D-7B-7D-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
-
-<p>Creates a new contact and adds it as the main contact to a subaccount.</p>
-
-<pre>Required parameters:
-
-account_id   | Fixnum | 123456 (subaccount id)
-company_name | String | &quot;App Developer Inc.&quot; 
-first_name   | String | &quot;Bob&quot;
-last_name    | String | &quot;Tester&quot;
-email        | String | &quot;btester@vivialconnect&quot;                   
-
-Optional parameters:
-
-address1     | String | &quot;500 Office Building Ln&quot;
-address2     | String | &quot;Suite 300&quot;
-address3     | String | &quot;c/o Front Desk&quot;
-city         | String | &quot;Columbia Heights&quot;
-country      | String | &quot;United States&quot;
-state        | String | &quot;Minnesota&quot;
-postal_code  | String | &quot;55421&quot;
-title        | String | &quot;CMO&quot;
-work_phone   | String | &quot;+1XXXXXXXXXX&quot;
-mobile_phone | String | &quot;+1XXXXXXXXXX&quot;
-fax          | String | &quot;+1XXXXXXXXXX&quot;
-
-Example Usage
-
-VivialConnect::Account.add_main_contact_to_subaccount(email: &quot;btester@vivialconnect&quot;, contact_type:&quot;main&quot;, company_name: &quot;Acme&quot;)
-=&gt; #&lt;VivialConnect::Contact account_id=1XXXX, active=true, address1=nil, address2=nil, address3=nil, city=nil, company_name=&quot;Acme&quot;, contact_type=&quot;main&quot;, country=&quot;United States&quot;, date_created=&quot;2017-04-21T10:51:50-04:00&quot;, date_modified=&quot;2017-04-21T10:51:50-04:00&quot;, email=&quot;btester@vivialconnect&quot;, fax=nil, first_name=&quot;Bob&quot;, id=89, last_name=&quot;Tester&quot;, mobile_phone=nil, postal_code=&quot;55421&quot;, state=nil, title=nil, work_phone=&quot;+1XXXXXXXXXX&quot;&gt;</pre>
-
-<h3 id="class-VivialConnect::Account-label-.add_user_to_subaccount-28options-3D-7B-7D-29">.add_user_to_subaccount(options={})<span><a href="#class-VivialConnect::Account-label-.add_user_to_subaccount-28options-3D-7B-7D-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
-
-<p>Creates a new <a href="User.html">User</a> and adds it to a subaccount.</p>
-
-<pre>Required parameters:                                                             
-
-first_name   | String | &quot;Bob&quot;
-last_name    | String | &quot;Tester&quot;
-email        | String | &quot;btester@vivialconnect&quot;                     
-username     | String | &quot;btester&quot;
-password     | String | &quot;dlrowolleh&quot;
-
-Example Usage
-
-VivialConnect::Account.add_user_to_subaccount(account_id: 1XXXX, email: &quot;btester@vivialconnect.net&quot;, username: &quot;btester&quot;, first_name: &quot;Bob&quot;, last_name: &quot;Tester&quot;, password: &quot;XXXXXXX&quot;)
-=&gt; #&lt;VivialConnect::User account_id=1XXXX, active=true, api_key=&quot;XYZYXZYXYZXYXZYXZYXYZYXYZYXYZYXYZYX&quot;, date_created=&quot;2017-04-21T11:27:16-04:00&quot;, date_modified=&quot;2017-04-21T11:27:16-04:00&quot;, email=&quot;btester@vivialconnect.net&quot;, first_name=&quot;Bob&quot;, id=10093, last_name=&quot;Tester&quot;, roles=[{&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:59-04:00&quot;, &quot;description&quot;=&gt;&quot;User role&quot;, &quot;id&quot;=&gt;4, &quot;name&quot;=&gt;&quot;User&quot;, &quot;role_type&quot;=&gt;&quot;client&quot;}], timezone=&quot;US/Eastern&quot;, username=&quot;btester&quot;, verified=false&gt; 
-
-Note: This method triggers an email to the created user&#39;s account. They need to answer this confirmation email before they will be able to log in.</pre>
-
 <h3 id="class-VivialConnect::Account-label-.all">.all<span><a href="#class-VivialConnect::Account-label-.all">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>Returns an array containing ruby objects corresponding to all <a
-href="Account.html">Account</a> resources associated with your account i.e.
-main account and associated subaccounts</p>
+href="Account.html">Account</a> resources associated with your account</p>
 
 <pre>Example usage:
 
@@ -163,21 +107,6 @@ VivialConnect::Account.all
 
 VivialConnect::Account.count
 =&gt; 5</pre>
-
-<h3 id="class-VivialConnect::Account-label-.create-28options-3D-7B-7D-29">.create(options={})<span><a href="#class-VivialConnect::Account-label-.create-28options-3D-7B-7D-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
-
-<p>Creates a subaccount tied to your main account</p>
-
-<pre>Required parameters:                                                                  
-
-company_name | String | &quot;App Developer Inc.&quot;                    
-
-Example Usage
-
-VivialConnect::Account.create(company_name: &quot;App Developer Inc.&quot;)
-=&gt; #&lt;VivialConnect::Account account_id=1XXXX, accounts=[], active=true, company_name=&quot;App Developer Inc.&quot;, contacts=[], date_created=&quot;2017-04-20T17:07:08-04:00&quot;, date_modified=&quot;2017-04-20T17:07:08-04:00&quot;, id=10086, services=[{&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;SMS service&quot;, &quot;id&quot;=&gt;1, &quot;name&quot;=&gt;&quot;sms&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;Account service&quot;, &quot;id&quot;=&gt;2, &quot;name&quot;=&gt;&quot;accounts&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;Public service&quot;, &quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;public&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}]&gt; 
-
-Note: When creating subaccounts, the `id` refers to the subaccount id, whereas the `account_id` refers to the main account.</pre>
 
 <h3 id="class-VivialConnect::Account-label-.find-28id-29">.find(id)<span><a href="#class-VivialConnect::Account-label-.find-28id-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -248,16 +177,6 @@ Example usage:
 VivialConnect::Account.find_in_batches {|batch| do_something_with_an_array(batch)}
 =&gt; [#&lt;VivialConnect::Account&gt;]</pre>
 
-<h3 id="class-VivialConnect::Account-label-.subaccounts">.subaccounts<span><a href="#class-VivialConnect::Account-label-.subaccounts">&para;</a> <a href="#top">&uarr;</a></span></h3>
-
-<p>Returns an array containing ruby objects containing all associated
-subaccounts</p>
-
-<pre>Example usage:
-
-VivialConnect::Account.subaccounts
-=&gt; [#&lt;VivialConnect::Account&gt;, #&lt;VivialConnect::Account&gt;, #&lt;VivialConnect::Account&gt;]</pre>
-
 <h3 id="class-VivialConnect::Account-label-.update-28id-2C+options-3D-7B-7D-29">.update(id, options={})<span><a href="#class-VivialConnect::Account-label-.update-28id-2C+options-3D-7B-7D-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <pre> Required parameters:
@@ -269,17 +188,6 @@ Example usage:
 
 VivialConnect::Account.update(1000, company_name: &quot;New Name&quot;)
 =&gt; #&lt;VivialConnect::Account account_id=1XXXX, accounts=[], active=true, company_name=&quot;New Name&quot;, contacts=[], date_created=&quot;2017-04-20T17:07:08-04:00&quot;, date_modified=&quot;2017-04-20T17:07:08-04:00&quot;, id=10086, services=[{&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;SMS service&quot;, &quot;id&quot;=&gt;1, &quot;name&quot;=&gt;&quot;sms&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;Account service&quot;, &quot;id&quot;=&gt;2, &quot;name&quot;=&gt;&quot;accounts&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;Public service&quot;, &quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;public&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}]&gt;</pre>
-
-<h3 id="class-VivialConnect::Account-label-23save">#save<span><a href="#class-VivialConnect::Account-label-23save">&para;</a> <a href="#top">&uarr;</a></span></h3>
-
-<pre>Creates a subaccount associated with your main account or updates an existing one
-
-Example usage:
-
-account = VivialConnect::Account.new
-account.company_name = &quot;B Tester QA Inc.&quot;
-account.save 
-=&gt; #&lt;VivialConnect::Account account_id=1XXXX, accounts=[], active=true, company_name=&quot;B Tester QA Inc.&quot;, contacts=[], date_created=&quot;2017-04-20T17:07:08-04:00&quot;, date_modified=&quot;2017-04-20T17:07:08-04:00&quot;, id=10086, services=[{&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;SMS service&quot;, &quot;id&quot;=&gt;1, &quot;name&quot;=&gt;&quot;sms&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;Account service&quot;, &quot;id&quot;=&gt;2, &quot;name&quot;=&gt;&quot;accounts&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}, {&quot;active&quot;=&gt;true, &quot;date_created&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;date_modified&quot;=&gt;&quot;2016-09-30T19:42:58-04:00&quot;, &quot;description&quot;=&gt;&quot;Public service&quot;, &quot;id&quot;=&gt;3, &quot;name&quot;=&gt;&quot;public&quot;, &quot;service_type&quot;=&gt;&quot;client&quot;}]&gt;</pre>
 
   </section>
 
