@@ -69,14 +69,6 @@ module VivialConnect
 
     @@configured = false
 
-    def initialize
-      begin 
-        @base_api_path = host + "#{api_version}/"
-      rescue NameError => e
-        raise VivialConnectClientError, "Please configure client before making requests. You can do this like so: .configure(api_key, api_secret, account_id) to "
-      end
-    end
-
     def self.configure(api_key, api_secret, account_id, host="https://api.vivialconnect.net/api/", api_version="v1.0" )
       @@api_key= api_key
       @@api_secret = api_secret
@@ -104,6 +96,10 @@ module VivialConnect
       @@host
     end
 
+    def set_host(host)
+      @@host = host
+    end
+
     def account_id 
       @@account_id
     end 
@@ -113,9 +109,11 @@ module VivialConnect
     end 
 
     def reset_api_base_path(new_host, new_api_version)
-       @base_api_path = new_host + "#{new_api_version}/"
-       connection
-       true
+      set_host(new_host)
+      set_api_version(new_api_version)
+      @base_api_path = host + api_version
+      connection
+      true
     end 
 
 
@@ -123,8 +121,12 @@ module VivialConnect
       @@api_version
     end
 
+    def set_api_version(api_version)
+      @@api_version = api_version
+    end
+
     def base_api_path
-      @base_api_path
+      @base_api_path = host + "#{api_version}/"
     end 
 
     def self.configured?
