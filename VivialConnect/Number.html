@@ -105,7 +105,7 @@ href="Number.html">Number</a> resources on your account</p>
 <pre>Example usage:
 
 VivialConnect::Number.all
-=&gt; [#&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;ALMELUND&quot;, date_created=&quot;2017-04-25T09:53:11-04:00&quot;, date_modified=&quot;2017-04-25T09:53:11-04:00&quot;, id=65, lata=nil, master_account_id=1XXXX, message_status_callback=nil, name=&quot;(612) 299-1726&quot;, phone_number=&quot;+16122991726&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;TWINCITIES&quot;, region=&quot;MN&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt;]</pre>
+=&gt; [#&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;ALMELUND&quot;, date_created=&quot;2017-04-25T09:53:11-04:00&quot;, date_modified=&quot;2017-04-25T09:53:11-04:00&quot;, id=65, lata=nil, master_account_id=1XXXX, status_text_url=nil, name=&quot;(612) 299-1726&quot;, phone_number=&quot;+16122991726&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;TWINCITIES&quot;, region=&quot;MN&quot;, sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=nil, voice_forwarding_number=nil&gt;]</pre>
 
 <h3 id="class-VivialConnect::Number-label-.available_numbers-28options-3D-7B-7D-29">.available_numbers(options={})<span><a href="#class-VivialConnect::Number-label-.available_numbers-28options-3D-7B-7D-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -152,19 +152,19 @@ area_code      | String | &quot;612&quot;
 
 Optional parameters:
 
-name                    | String | New phone number as it is displayed to users. Default format: Friendly national format: (xxx) yyy-zzzz.
-message_status_callback | String | URL to receive message status callback requests for messages sent via the API using this associated phone number. Max. length: 256 characters.
-sms_configuration_id    | String | Unique identifier of the message status callback configuration to be used to handle SMS messages sent to the associated number.
-sms_url                 | String | sms_url URL for receiving SMS messages to the associated phone number. Max. length: 256 characters.
-sms_method              | String | HTTP method used for the sms_url requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
-sms_fallback_url        | String | URL for receiving SMS messages if sms_url fails. Only valid if you provide a value for the sms_url parameter. Max. length: 256 characters.
-sms_fallback_method     | String | HTTP method used for sms_url_fallback requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
+name                          | String | New phone number as it is displayed to users. Default format: Friendly national format: (xxx) yyy-zzzz.
+status_text_url               | String | URL to receive status requests for messages sent via the API using this associated phone number. Max. length: 256 characters.
+sms_configuration_id          | String | Unique identifier of the status configuration to be used to handle SMS messages sent to the associated number.
+incoming_text_url             | String | URL for receiving SMS messages to the associated phone number. Max. length: 256 characters.
+incoming_text_method          | String | HTTP method used for the incoming_text_url requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
+incoming_text_fallback_url    | String | URL for receiving SMS messages if incoming_text_url fails. Only valid if you provide a value for the incoming_text_url parameter. Max. length: 256 characters.
+incoming_text_fallback_method | String | HTTP method used for sms_url_fallback requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
 
 Example usage:
 
 VivialConnect::Number.create(phone_number: &quot;+14124330365&quot;)
 VivialConnect::Number.buy(phone_number: &quot;+14124330365&quot;)
-=&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, message_status_callback=nil, name=&quot;(412) 433-0365&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt;</pre>
+=&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, status_text_url=nil, name=&quot;(412) 433-0365&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=nil, voice_forwarding_number=nil&gt;</pre>
 
 <h3 id="class-VivialConnect::Number-label-.delete-28id-29">.delete(id)<span><a href="#class-VivialConnect::Number-label-.delete-28id-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -210,7 +210,7 @@ id | Fixnum | 726
 Example usage:
 
 VivialConnect::Number.find(726)
-=&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;ALMELUND&quot;, date_created=&quot;2017-04-25T10:22:07-04:00&quot;, date_modified=&quot;2017-04-25T10:41:16-04:00&quot;, id=726, lata=nil, master_account_id=1XXXX, message_status_callback=nil, name=&quot;Dr. Jones&quot;, phone_number=&quot;+16123151041&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;TWINCITIES&quot;, region=&quot;MN&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt;</pre>
+=&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;ALMELUND&quot;, date_created=&quot;2017-04-25T10:22:07-04:00&quot;, date_modified=&quot;2017-04-25T10:41:16-04:00&quot;, id=726, lata=nil, master_account_id=1XXXX, status_text_url=nil, name=&quot;Dr. Jones&quot;, phone_number=&quot;+16123151041&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;TWINCITIES&quot;, region=&quot;MN&quot;, sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=nil, voice_forwarding_number=nil&gt;</pre>
 
 <h3 id="class-VivialConnect::Number-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29">.find_each(start: 1, finish: nil, batch_size: 150)<span><a href="#class-VivialConnect::Number-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -274,7 +274,7 @@ VivialConnect::Number.find_in_batches {|batch| do_something_with_an_array(batch)
 <pre>Example usage:
 
 VivialConnect::Number.local
-=&gt; [#&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;BELCHERTOWN&quot;, date_created=&quot;2017-02-06T15:51:27-05:00&quot;, date_modified=&quot;2017-04-10T17:43:17-04:00&quot;, id=27, lata=nil, master_account_id=1XXXX, message_status_callback=nil, name=&quot;App Number 1&quot;, phone_number=&quot;+1XXXXXXXXXX&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;BELCHERTN&quot;, region=&quot;MA&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=&quot;http://requestb.in/174w8nz1&quot;, voice_forwarding_number=&quot;+1XXXXXXXXXX&quot;&gt;]</pre>
+=&gt; [#&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;BELCHERTOWN&quot;, date_created=&quot;2017-02-06T15:51:27-05:00&quot;, date_modified=&quot;2017-04-10T17:43:17-04:00&quot;, id=27, lata=nil, master_account_id=1XXXX, status_text_url=nil, name=&quot;App Number 1&quot;, phone_number=&quot;+1XXXXXXXXXX&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;BELCHERTN&quot;, region=&quot;MA&quot;, sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=&quot;http://requestb.in/174w8nz1&quot;, voice_forwarding_number=&quot;+1XXXXXXXXXX&quot;&gt;]</pre>
 
 <h3 id="class-VivialConnect::Number-label-.lookup-28number-29">.lookup(number)<span><a href="#class-VivialConnect::Number-label-.lookup-28number-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -298,18 +298,18 @@ id                      | Fixnum | 875
 
 Optional parameters:
 
-name                    | String | New phone number as it is displayed to users. Default format: Friendly national format: (xxx) yyy-zzzz.
-message_status_callback | String | URL to receive message status callback requests for messages sent via the API using this associated phone number. Max. length: 256 characters.
-sms_configuration_id    | String | Unique identifier of the message status callback configuration to be used to handle SMS messages sent to the associated number.
-sms_url                 | String | sms_url URL for receiving SMS messages to the associated phone number. Max. length: 256 characters.
-sms_method              | String | HTTP method used for the sms_url requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
-sms_fallback_url        | String | URL for receiving SMS messages if sms_url fails. Only valid if you provide a value for the sms_url parameter. Max. length: 256 characters.
-sms_fallback_method     | String | HTTP method used for sms_url_fallback requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
+name                          | String | New phone number as it is displayed to users. Default format: Friendly national format: (xxx) yyy-zzzz.
+status_text_url               | String | URL to receive status requests for messages sent via the API using this associated phone number. Max. length: 256 characters.
+sms_configuration_id          | String | Unique identifier of the status configuration to be used to handle SMS messages sent to the associated number.
+incoming_text_url             | String | incoming_text_url URL for receiving SMS messages to the associated phone number. Max. length: 256 characters.
+incoming_text_method          | String | HTTP method used for the incoming_text_url requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
+incoming_text_fallback_url    | String | URL for receiving SMS messages if incoming_text_url fails. Only valid if you provide a value for the incoming_text_url parameter. Max. length: 256 characters.
+incoming_text_fallback_method | String | HTTP method used for sms_url_fallback requests. Max. length: 8 characters. Possible values: GET or POST. Default value: POST.
 
 Example usage:
 
 VivialConnect::Number.update(875, name: &quot;Dr. Jones&quot;)
-=&gt; #&lt;VivialConnect::Number account_id=10096, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;ALMELUND&quot;, date_created=&quot;2017-04-25T10:22:07-04:00&quot;, date_modified=&quot;2017-04-25T10:41:16-04:00&quot;, id=69, lata=nil, master_account_id=1XXXX, message_status_callback=nil, name=&quot;Dr. Jones&quot;, phone_number=&quot;+16123151041&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;TWINCITIES&quot;, region=&quot;MN&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, message_status_callback=nil, name=&quot;(412) 433-0365&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt;</pre>
+=&gt; #&lt;VivialConnect::Number account_id=10096, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;ALMELUND&quot;, date_created=&quot;2017-04-25T10:22:07-04:00&quot;, date_modified=&quot;2017-04-25T10:41:16-04:00&quot;, id=69, lata=nil, master_account_id=1XXXX, status_text_url=nil, name=&quot;Dr. Jones&quot;, phone_number=&quot;+16123151041&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;TWINCITIES&quot;, region=&quot;MN&quot;, sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=nil, voice_forwarding_number=nil&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, status_text_url=nil, name=&quot;(412) 433-0365&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=nil, voice_forwarding_number=nil&gt;</pre>
 
 <h3 id="class-VivialConnect::Number-label-23delete">#delete<span><a href="#class-VivialConnect::Number-label-23delete">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -330,7 +330,7 @@ Example usage:
 number = VivialConnect::Number.find(2)
 number.name = &quot;new name for this number&quot;
 number.save
-=&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, message_status_callback=nil, name=&quot;new name for this number&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, sms_fallback_method=nil, sms_fallback_url=nil, sms_method=nil, sms_url=nil, voice_forwarding_number=nil&gt;</pre>
+=&gt; #&lt;VivialConnect::Number account_id=1XXXX, active=true, address_requirements=&quot;none&quot;, capabilities={&quot;mms&quot;=&gt;true, &quot;sms&quot;=&gt;true, &quot;voice&quot;=&gt;true}, city=&quot;PITTSBURGH &quot;, date_created=&quot;2017-04-25T09:56:04-04:00&quot;, date_modified=&quot;2017-04-25T09:56:04-04:00&quot;, id=66, lata=nil, master_account_id=10096, status_text_url=nil, name=&quot;new name for this number&quot;, phone_number=&quot;+14124330365&quot;, phone_number_type=&quot;local&quot;, rate_center=&quot;PTTSBGZON1&quot;, region=&quot;PA&quot;, sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=nil, voice_forwarding_number=nil&gt;</pre>
 
   </section>
 

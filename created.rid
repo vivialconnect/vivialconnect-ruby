@@ -1,4 +1,4 @@
-Tue, 23 May 2017 13:23:35 -0500
+Tue, 23 May 2017 15:01:35 -0500
 lib/vivialconnect/account.rb	Wed, 17 May 2017 16:20:44 -0500
 lib/vivialconnect/attachment.rb	Wed, 17 May 2017 16:03:19 -0500
 lib/vivialconnect/client.rb	Thu, 18 May 2017 08:56:27 -0500
@@ -6,7 +6,7 @@ lib/vivialconnect/configuration.rb	Wed, 17 May 2017 16:03:19 -0500
 lib/vivialconnect/contact.rb	Wed, 17 May 2017 16:03:19 -0500
 lib/vivialconnect/log.rb	Wed, 17 May 2017 16:03:19 -0500
 lib/vivialconnect/message.rb	Tue, 23 May 2017 13:23:22 -0500
-lib/vivialconnect/number.rb	Wed, 17 May 2017 16:03:19 -0500
+lib/vivialconnect/number.rb	Tue, 23 May 2017 15:01:20 -0500
 lib/vivialconnect/resource.rb	Wed, 17 May 2017 16:03:19 -0500
 lib/vivialconnect/user.rb	Wed, 17 May 2017 16:03:19 -0500
 lib/vivialconnect/version.rb	Thu, 18 May 2017 08:58:35 -0500
