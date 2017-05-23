@@ -100,7 +100,7 @@ href="Message.html">Message</a> resources on your account</p>
 <pre>Example usage:
 
 VivialConnect::Message.all
-=&gt; [#&lt;VivialConnect::Message to_number=&quot;#&quot;, from_number=&quot;#&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;]</pre>
+=&gt; [#&lt;VivialConnect::Message to_number=&quot;#&quot;, from_number=&quot;#&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;]</pre>
 
 <h3 id="class-VivialConnect::Message-label-.count">.count<span><a href="#class-VivialConnect::Message-label-.count">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -132,13 +132,13 @@ SMS
 
 VivialConnect::Message.send(to_number: &quot;+1##########&quot;, from_number: &quot;+1##########&quot;, body: &quot;example message&quot;) 
 VivialConnect::Message.create(to_number: &quot;+1##########&quot;, from_number: &quot;+1##########&quot;, body: &quot;example message&quot;) 
-=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt; 
+=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt; 
 
 MMS
 
 VivialConnect::Message.send(to_number: &quot;+1##########&quot;, from_number: &quot;+1##########&quot;, body: &quot;example mms&quot;, content_urls: [&#39;www.yourhost/path/to/media&#39;]) 
 VivialConnect::Message.create(to_number: &quot;+1##########&quot;, from_number: &quot;+1##########&quot;, body: &quot;example mms&quot;, content_urls: [&#39;www.yourhost/path/to/media&#39;]) 
-=&gt; #&lt;VivialConnect::Message account_id=1XXXXX, body=&quot;example mms&quot;, date_created=&quot;2017-04-19T11:18:11-04:00&quot;, date_modified=&quot;2017-04-19T11:18:34-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, from_number=&quot;+1##########&quot;, id=6399, master_account_id=1XXXX message_status_callback=nil, message_type=&quot;local_mms&quot;, num_media=1, num_segments=1, price=100, price_currency=&quot;USD&quot;, sent=&quot;2017-04-19T11:18:16-04:00&quot;, sms_configuration_id=nil, status=&quot;delivered&quot;, to_number=&quot;+1##########&quot;&gt;</pre>
+=&gt; #&lt;VivialConnect::Message account_id=1XXXXX, body=&quot;example mms&quot;, date_created=&quot;2017-04-19T11:18:11-04:00&quot;, date_modified=&quot;2017-04-19T11:18:34-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, from_number=&quot;+1##########&quot;, id=6399, master_account_id=1XXXX, message_type=&quot;local_mms&quot;, num_media=1, num_segments=1, price=100, price_currency=&quot;USD&quot;, sent=&quot;2017-04-19T11:18:16-04:00&quot;, sms_configuration_id=nil, status=&quot;delivered&quot;, to_number=&quot;+1##########&quot;&gt;</pre>
 
 <h3 id="class-VivialConnect::Message-label-.find-28id-29">.find(id)<span><a href="#class-VivialConnect::Message-label-.find-28id-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -151,7 +151,7 @@ id | Fixnum | the id of the message you would like to retrieve
 Example usage:
 
 VivialConnect::Message.find(17219)
-=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
+=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
 
 <h3 id="class-VivialConnect::Message-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29+">.find_each(start: 1, finish: nil, batch_size: 150) <span><a href="#class-VivialConnect::Message-label-.find_each-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29+">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -178,7 +178,7 @@ Example usage:
 
 VivialConnect::Message.find_each {|message| puts message.body}
 example message
-=&gt; [#&lt;VivialConnect::Message to_number=&quot;#&quot;, from_number=&quot;#&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;, ...]</pre>
+=&gt; [#&lt;VivialConnect::Message to_number=&quot;#&quot;, from_number=&quot;#&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;, ...]</pre>
 
 <h3 id="class-VivialConnect::Message-label-.find_in_batches-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29++">.find_in_batches(start: 1, finish: nil, batch_size: 150)  <span><a href="#class-VivialConnect::Message-label-.find_in_batches-28start-3A+1-2C+finish-3A+nil-2C+batch_size-3A+150-29++">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -204,7 +204,7 @@ batch_size | Fixnum | between 1..150
 Example usage:
 
 VivialConnect::Message.find_in_batches {|batch| do_something_with_an_array(batch)}
-=&gt; [#&lt;VivialConnect::Message to_number=&quot;#&quot;, from_number=&quot;#&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;, ...]</pre>
+=&gt; [#&lt;VivialConnect::Message to_number=&quot;#&quot;, from_number=&quot;#&quot;, body=&quot;example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;, ...]</pre>
 
 <h3 id="class-VivialConnect::Message-label-.redact-28id-29">.redact(id)<span><a href="#class-VivialConnect::Message-label-.redact-28id-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -213,7 +213,7 @@ VivialConnect::Message.find_in_batches {|batch| do_something_with_an_array(batch
 Example usage:
 
 VivialConnect::Message.redact(1)
-=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
+=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
 
 <h3 id="class-VivialConnect::Message-label-23save">#save<span><a href="#class-VivialConnect::Message-label-23save">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -226,7 +226,7 @@ message.to_number = &quot;+1##########&quot;
 message.from_number = &quot;+1##########&quot;
 message.body = &quot;Example message&quot;
 message.save 
-=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;Example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T16:18:12-04:00&quot;, date_modified=&quot;2017-04-19T16:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17220, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
+=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;Example message&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T16:18:12-04:00&quot;, date_modified=&quot;2017-04-19T16:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17220, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
 
 <h3 id="class-VivialConnect::Message-label-23redact">#redact<span><a href="#class-VivialConnect::Message-label-23redact">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -235,7 +235,7 @@ message.save
 <pre>Example usage:
 
 message.redact
-=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
+=&gt; #&lt;VivialConnect::Message to_number=&quot;+1##########&quot;, from_number=&quot;+1##########&quot;, body=&quot;&quot;, account_id=1XXXX, date_created=&quot;2017-04-19T15:18:12-04:00&quot;, date_modified=&quot;2017-04-19T15:18:12-04:00&quot;, direction=&quot;outbound-api&quot;, error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type=&quot;local_sms&quot;, num_media=0, num_segments=1, price=75, price_currency=&quot;USD&quot;, sent=nil, sms_configuration_id=nil, status=&quot;accepted&quot;&gt;</pre>
 
   </section>
 
