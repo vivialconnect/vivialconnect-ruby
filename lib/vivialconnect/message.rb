@@ -9,7 +9,7 @@ module VivialConnect
   #
   #
   # VivialConnect::Message.all
-  # => [#<VivialConnect::Message to_number="#", from_number="#", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted">]
+  # => [#<VivialConnect::Message to_number="#", from_number="#", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted">]
   #
   #
   #===  .count
@@ -49,14 +49,14 @@ module VivialConnect
   #
   # VivialConnect::Message.send(to_number: "+1##########", from_number: "+1##########", body: "example message") 
   # VivialConnect::Message.create(to_number: "+1##########", from_number: "+1##########", body: "example message") 
-  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
+  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
   #
   #
   # MMS
   #
   # VivialConnect::Message.send(to_number: "+1##########", from_number: "+1##########", body: "example mms", content_urls: ['www.yourhost/path/to/media']) 
   # VivialConnect::Message.create(to_number: "+1##########", from_number: "+1##########", body: "example mms", content_urls: ['www.yourhost/path/to/media']) 
-  # => #<VivialConnect::Message account_id=1XXXXX, body="example mms", date_created="2017-04-19T11:18:11-04:00", date_modified="2017-04-19T11:18:34-04:00", direction="outbound-api", error_code=nil, error_message=nil, from_number="+1##########", id=6399, master_account_id=1XXXX message_status_callback=nil, message_type="local_mms", num_media=1, num_segments=1, price=100, price_currency="USD", sent="2017-04-19T11:18:16-04:00", sms_configuration_id=nil, status="delivered", to_number="+1##########"> 
+  # => #<VivialConnect::Message account_id=1XXXXX, body="example mms", date_created="2017-04-19T11:18:11-04:00", date_modified="2017-04-19T11:18:34-04:00", direction="outbound-api", error_code=nil, error_message=nil, from_number="+1##########", id=6399, master_account_id=1XXXX, message_type="local_mms", num_media=1, num_segments=1, price=100, price_currency="USD", sent="2017-04-19T11:18:16-04:00", sms_configuration_id=nil, status="delivered", to_number="+1##########"> 
   #
   #
   # 
@@ -76,7 +76,7 @@ module VivialConnect
   #
   #
   # VivialConnect::Message.find(17219)
-  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
+  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
   #
   #
   ##
@@ -110,7 +110,7 @@ module VivialConnect
   #
   # VivialConnect::Message.find_each {|message| puts message.body}
   # example message
-  # => [#<VivialConnect::Message to_number="#", from_number="#", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted">, ...]
+  # => [#<VivialConnect::Message to_number="#", from_number="#", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted">, ...]
   #
   #
   #
@@ -145,7 +145,7 @@ module VivialConnect
   #
   #
   # VivialConnect::Message.find_in_batches {|batch| do_something_with_an_array(batch)}
-  # => [#<VivialConnect::Message to_number="#", from_number="#", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted">, ...]
+  # => [#<VivialConnect::Message to_number="#", from_number="#", body="example message", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted">, ...]
   #
   #
   #
@@ -159,7 +159,7 @@ module VivialConnect
   #
   #
   # VivialConnect::Message.redact(1)
-  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
+  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
   #
   #
   ##
@@ -175,7 +175,7 @@ module VivialConnect
   # message.from_number = "+1##########"
   # message.body = "Example message"
   # message.save 
-  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="Example message", account_id=1XXXX, date_created="2017-04-19T16:18:12-04:00", date_modified="2017-04-19T16:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17220, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
+  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="Example message", account_id=1XXXX, date_created="2017-04-19T16:18:12-04:00", date_modified="2017-04-19T16:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17220, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
   #
   #
   ##
@@ -188,7 +188,7 @@ module VivialConnect
   #
   #
   # message.redact
-  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_status_callback=nil, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
+  # => #<VivialConnect::Message to_number="+1##########", from_number="+1##########", body="", account_id=1XXXX, date_created="2017-04-19T15:18:12-04:00", date_modified="2017-04-19T15:18:12-04:00", direction="outbound-api", error_code=nil, error_message=nil, id=17219, master_account_id=1XXXX, message_type="local_sms", num_media=0, num_segments=1, price=75, price_currency="USD", sent=nil, sms_configuration_id=nil, status="accepted"> 
   #
   #
 
