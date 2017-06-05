@@ -68,9 +68,6 @@ RSpec.describe Resource do
     it 'builds Attachment path correctly' do 
       expect(VivialConnect::Attachment.class_to_path).to eq('/attachments')
     end
-    it 'builds Configuration path correctly' do 
-      expect(VivialConnect::Configuration.class_to_path).to eq('/configurations')
-    end 
 
     it 'builds Log path correctly' do 
      expect(VivialConnect::Log.class_to_path).to eq('/logs')

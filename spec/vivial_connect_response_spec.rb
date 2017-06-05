@@ -71,17 +71,10 @@ require_relative "./stubbed_response"
 
     end 
 
-    it "processes ::Configuration.delete" do 
-      #Account.delete is not a supported endpoint, so using Configuration as the example
-      @stubs.delete('https://api.vivialconnect.net/api/v1.0/configuration/1.json') { [200, {'Content-Type' => 'application/json'}, "{}"] }
-      resp = @conn.delete('https://api.vivialconnect.net/api/v1.0/configuration/1.json')
-      vivial_connect_response = @client.process_api_response(resp, url)
-      expect(vivial_connect_response).to be(true)
-    end 
 
     it "raises VivialConnectClientError for response codes >=400" do 
-      @stubs.delete('https://api.vivialconnect.net/api/v1.0/configuration/39.json') { [400, {'Content-Type' => 'application/json'}, '{"message": "Resource not found for id 39"}'] }
-      resp = @conn.delete('https://api.vivialconnect.net/api/v1.0/configuration/39.json')
+      @stubs.delete('https://api.vivialconnect.net/api/v1.0/accounts/39.json') { [400, {'Content-Type' => 'application/json'}, '{"message": "Resource not found for id 39"}'] }
+      resp = @conn.delete('https://api.vivialconnect.net/api/v1.0/accounts/39.json')
       expect{ @client.process_api_response(resp, url) }.to raise_error("Resource not found for id 39")
     end 
 
