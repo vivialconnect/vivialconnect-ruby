@@ -290,7 +290,6 @@ RSpec.describe VivialConnect::Client do
     it "should return the right response class based request path" do 
       expect(@client.choose_response_class('/api/v1.0/accounts.json')).to be(VivialConnect::Account)
       expect(@client.choose_response_class('/api/v1.0/accounts/999/attachments.json')).to be(VivialConnect::Attachment)
-      expect(@client.choose_response_class('/api/v1.0/accounts/999/configurations.json')).to be(VivialConnect::Configuration)
       expect(@client.choose_response_class('/api/v1.0/accounts/999/logs.json')).to be(VivialConnect::Log)
       expect(@client.choose_response_class('/api/v1.0/accounts/999/messages/1.json')).to be(VivialConnect::Message)
       expect(@client.choose_response_class('/api/v1.0/accounts/999/numbers.json')).to be(VivialConnect::Number)
