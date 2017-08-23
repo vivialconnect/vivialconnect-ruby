@@ -9,5 +9,6 @@ require 'vivialconnect/attachment'
 require 'vivialconnect/number'
 require 'vivialconnect/log'
 require 'vivialconnect/contact'
+require 'vivialconnect/connector'
 require 'vivialconnect/vivial_connect_error'
 

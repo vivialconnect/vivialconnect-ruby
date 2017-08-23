@@ -281,7 +281,7 @@ module VivialConnect
   # => #<VivialConnect::Number account_id=1XXXX, active=true, address_requirements="none", capabilities={"mms"=>true, "sms"=>true, "voice"=>true}, city="PITTSBURGH ", date_created="2017-04-25T09:56:04-04:00", date_modified="2017-04-25T09:56:04-04:00", id=66, lata=nil, master_account_id=10096, status_text_url=nil, name="new name for this number", phone_number="+14124330365", phone_number_type="local", rate_center="PTTSBGZON1", region="PA", sms_configuration_id=nil, incoming_text_fallback_method=nil, incoming_text_fallback_url=nil, incoming_text_method=nil, incoming_text_url=nil, voice_forwarding_number=nil>
   #
   #
- 
+
   class Number < Resource
 
     singleton_class.send(:alias_method, :buy, :create)
@@ -314,8 +314,7 @@ module VivialConnect
 
     def self.local # :nodoc: 
       VivialConnect::Client.instance.make_request('GET', '/numbers/local.json')
-    end 
-
+    end
 
   end
 

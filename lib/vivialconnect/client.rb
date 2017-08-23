@@ -100,13 +100,13 @@ module VivialConnect
       @@host = host
     end
 
-    def account_id 
+    def account_id
       @@account_id
-    end 
+    end
 
     def account_id=(id)
        @@account_id = id
-    end 
+    end
 
     def reset_api_base_path(new_host, new_api_version)
       set_host(new_host)
@@ -114,8 +114,7 @@ module VivialConnect
       @base_api_path = host + api_version
       connection
       true
-    end 
-
+    end
 
     def api_version
       @@api_version
@@ -133,41 +132,33 @@ module VivialConnect
       @@configured == true
     end
 
-
     def set_request_timestamp 
       @request_timestamp = Time.now.utc.strftime('%Y%m%dT%H%M%SZ')
     end
 
-
     def request_timestamp
       @request_timestamp
-    end 
-
+    end
 
     def set_date_for_date_header
       @date_for_date_header = Time.now.utc.strftime('%a, %d %b %Y %H:%M:%S GMT')
-    end 
-
+    end
 
     def date_for_date_header
       @date_for_date_header 
-    end 
-
+    end
 
     def api_key
       @@api_key
     end
 
-
     def api_secret
       @@api_secret
     end
 
-
     def set_hmac_sha256(canonical_request)
       @hmac_sha256 = OpenSSL::HMAC.hexdigest('SHA256', api_secret, canonical_request)
     end
-
 
     def hmac_sha256
       @hmac_sha256 
@@ -177,8 +168,7 @@ module VivialConnect
       canonical_request = http_verb + "\n" + request_timestamp + "\n" + Addressable::URI.encode(url.path) + 
                           "\n" + get_canonicalized_query_string(url) + "\n" + canonicalized_headers + "\n" +
                            canonicalized_header_names +  "\n" + Digest::SHA256.hexdigest(data.to_s)
-    end 
-
+    end
 
     def sign_request(http_verb, url, data={})
       set_request_timestamp 
@@ -187,8 +177,7 @@ module VivialConnect
       canonicalized_header_names = "accept;date;host"
       canonical_request = build_canonical_request(http_verb, url, request_timestamp, canonicalized_headers, canonicalized_header_names, data)
       set_hmac_sha256(canonical_request)
-    end 
-
+    end
 
     def get_canonicalized_query_string(url)
       return "" unless url.query_values
@@ -198,7 +187,6 @@ module VivialConnect
       # http://stackoverflow.com/questions/2824126/whats-the-difference-between-uri-escape-and-cgi-escape
       encoded_sorted_params = Addressable::URI.form_encode(sorted_params).gsub('+', '%20') 
     end
-
 
     def connection
       @conn = Faraday.new(:url => base_api_path) 
@@ -211,11 +199,10 @@ module VivialConnect
       url = get_request_path(url)
       sign_request(request_method, url, data)
       headers = create_request_headers
-      request_method = request_method.downcase.to_sym                                                                                                                                                                                                                                                                                                                                               
+      request_method = request_method.downcase.to_sym
       response = connection.run_request(request_method, url, data.to_s, headers)
-      process_api_response(response, url)
+      process_api_response(response, url, request_method)
     end
-
 
     def create_request_headers
       headers = {}
@@ -227,24 +214,20 @@ module VivialConnect
       headers['Date'] = date_for_date_header
       headers['Accept'] = 'application/json'
       headers
-    end 
-
+    end
 
     def no_account_number_endpoints
       ['accounts.json', '/accounts/count.json', 'registration/register.json'] 
     end
-
 
     def account_regex_match?(url)
       m =  /accounts\/[0-9]+.json/.match(url)
       return !m.nil? 
     end
 
-
     def account_query_match?(url)
       url.include?("accounts.json?")
     end
-
 
     def get_request_path(url)
       if no_account_number_endpoints.include?(url) || account_regex_match?(url) || account_query_match?(url)
@@ -254,43 +237,43 @@ module VivialConnect
         base_path = base_api_path + "accounts/#{account_id}"
         Addressable::URI.parse(base_path + url)
       end
-    end 
+    end
 
-    def process_api_response(response, url)
+    def process_api_response(response, url, request_method)
       # make API response into appropriate object and return it
       api_response = {}
         raise VivialConnectClientError, JSON.parse(response.body)['message'] ? JSON.parse(response.body)['message'] : response.body if response.status >= 400
         response_class = choose_response_class(url.path)
-        if response.body == "" || response.body.include?("{}")
+        if request_method == :delete || response.body == "" || response.body.include?("{}")
           return true if response.status.between?(200, 299)
           false
+          api_response = JSON.parse(response.body)
         else
           api_response = JSON.parse(response.body)
-          if api_response[api_response.keys.first].is_a?(Array) 
-            #return an array of resource objects
+          if api_response[api_response.keys.first].is_a?(Array)
+            #return an array of resource objects for typical .all requests
             response_array = api_response[api_response.keys.first]
             api_response = process_array(response_array, response_class)
           elsif api_response[api_response.keys[1]].is_a?(Array)
             #handle Log resource, return last key and an array full of log objects
             last_key = api_response['last_key']
             response_array = api_response['log_items']
-            processed_array = process_array(response_array, response_class)    
+            processed_array = process_array(response_array, response_class)
             [last_key, processed_array]
           elsif api_response[api_response.keys.first].is_a?(Fixnum)
             # json is only one level deep for .count response, so no need to delete the json root
             # return the number
             api_response['count']
-          else 
+          else
             if response_class == VivialConnect::Log 
               # json is only one level deep for Log response, so no need to delete the json root
               response_class.new(api_response)
-            else 
+            else
               # remove json root, these resources return nested info
               api_response = api_response[api_response.keys.first]
               response_class.new(api_response)
             end
-          end 
-
+          end
       end
     end
 
@@ -306,7 +289,7 @@ module VivialConnect
         return Account 
       elsif url.include?('attachments')
         return Attachment
-      else 
+      else
         api_resource = url[5]
         #exceptions needed for resources requiring camelcase
         klass = api_resource.capitalize
@@ -316,7 +299,6 @@ module VivialConnect
       end 
     end
 
-
   end
-end 
+end
 

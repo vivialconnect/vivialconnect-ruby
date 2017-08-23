@@ -20,14 +20,17 @@ class Resource < OpenStruct # :nodoc:
   ##
   # Returns an array containing all of the API resources
   
-  def self.all
+  def self.all(path=false)
     final_array = []
     page = 1
     limit = 100
     while true
-      path = path_builder(:all)
+      path = path ||= path_builder(:all)
       uri = build_template_uri(path: path, start: page, batch_size: limit)
       current_iteration = VivialConnect::Client.instance.make_request('GET', uri)
+      if current_iteration.class != Array
+        return []
+      end
       final_array = update_final_array(current_iteration, final_array)
       break final_array if current_iteration.count < limit
       page += 1
@@ -120,7 +123,7 @@ class Resource < OpenStruct # :nodoc:
     data = data.to_json
     uri = path_builder(:update, id)
     VivialConnect::Client.instance.make_request('PUT', uri, data)
-  end 
+  end
 
   ##
   # Deletes the record defined by the provided id. 
@@ -132,7 +135,7 @@ class Resource < OpenStruct # :nodoc:
     data['id'] = id 
     data = data.to_json
     VivialConnect::Client.instance.make_request('DELETE', uri, data)
-  end 
+  end
 
 
   def self.redact(id)
@@ -165,7 +168,7 @@ class Resource < OpenStruct # :nodoc:
       end
     end
     return url
-  end 
+  end
 
   def self.pluralize(string) # :nodoc:
     # avoids importing a library but will need to be improved upon depending on future api resource names
@@ -182,7 +185,7 @@ class Resource < OpenStruct # :nodoc:
       data['phone_number'] = options
       return data
     end
-  end 
+  end
 
   def self.class_to_path # :nodoc:
     base = self.to_s.split('::')[-1].downcase
@@ -204,7 +207,7 @@ class Resource < OpenStruct # :nodoc:
       end
     end
     final.join("").downcase
-  end 
+  end
 
   def self.build_template_uri(path: p, start: nil, batch_size: nil) # :nodoc:
     all_template = Addressable::Template.new("#{path}{?query*}")
@@ -220,7 +223,7 @@ class Resource < OpenStruct # :nodoc:
   # This instance method saves the current object if it does not have an id
   # and updates the existing object if it does have an id. It is equivalent to calling .create or .update
   # on the instance level.
- 
+
   def save
     if self.id.nil?
       data = self.class.build_hash_root_and_add_user_hash(self.to_h)
@@ -239,7 +242,7 @@ class Resource < OpenStruct # :nodoc:
       new_object_hash =response_object.marshal_dump
       self.add_methods(new_object_hash)
       self
-    end 
+    end
   end
 
   ##
@@ -253,9 +256,6 @@ class Resource < OpenStruct # :nodoc:
     data['id'] = self.id 
     data = data.to_json
     VivialConnect::Client.instance.make_request('DELETE', uri, data)
-  end  
-
-
-
+  end
 
 end

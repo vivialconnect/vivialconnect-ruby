@@ -212,11 +212,10 @@ module VivialConnect
       data = data.to_json
       VivialConnect::Client.instance.make_request('PUT',"/messages/#{id}.json", data) 
     end
-
-
+    
   end
 
-end 
+end
 
 
 
