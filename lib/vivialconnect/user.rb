@@ -152,7 +152,7 @@ module VivialConnect
       data[:user] = {_password: old_pw, password: new_pw}
       data = data.to_json
       response = VivialConnect::Client.instance.make_request('PUT', "/users/#{self.id}/profile/password.json", data) 
-    end 
-    
+    end
+
   end
 end

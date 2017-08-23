@@ -1,4 +1,4 @@
-def generic_count 
+def generic_count
   %q{
     {
       "count": 5
@@ -7,7 +7,7 @@ def generic_count
 end 
 
 
-def account_all 
+def account_all
 
 %q{
   {
@@ -351,7 +351,7 @@ def account_find
 
   {
     "account": {
-      "account_id": null, 
+      "account_id": null,
       "accounts": [
         {
           "account_id": 10012, 
@@ -622,7 +622,7 @@ def account_create
 
 end
 
-def account_update 
+def account_update
 
   %q{
     {
@@ -667,8 +667,61 @@ def account_update
   }
 }
   }
-end 
+end
 
+def message_post_response
+ %q{
+{
+    "message": {
+        "account_id": 231023,
+        "body": "Test message",
+        "date_created": "2016-08-17T09:25:32-04:00",
+        "date_modified": "2016-08-17T09:25:32-04:00",
+        "direction": "outbound-api",
+        "error_code": null,
+        "error_message": null,
+        "from_number": "+19194332323",
+        "id": 231323,
+        "message_type": "local_sms",
+        "num_media": 0,
+        "num_segments": 1,
+        "price": 100,
+        "price_currency": "USD",
+        "sent": null,
+        "connector_id": null,
+        "status": "accepted",
+        "to_number": "+18005551111"
+    }
+}
+}
+end
+
+def message_put_response
+ %q{
+{
+    "message": {
+        "account_id": 231023,
+        "body": "",
+        "date_created": "2016-08-17T09:25:32-04:00",
+        "date_modified": "2016-08-17T09:25:32-04:00",
+        "direction": "outbound-api",
+        "error_code": null,
+        "error_message": null,
+        "from_number": "+19194332323",
+        "id": 231323,
+        "message_type": "local_sms",
+        "num_media": 0,
+        "num_segments": 1,
+        "price": 100,
+        "price_currency": "USD",
+        "sent": null,
+        "connector_id": null,
+        "status": "accepted",
+        "to_number": "+18005551111"
+    }
+}
+}
+end
 def not_our_json_good
   '{"dogs": {"Loki":"pug", "Nora":"Great Dane"}}'
 end

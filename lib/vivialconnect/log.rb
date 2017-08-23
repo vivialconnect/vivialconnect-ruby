@@ -48,7 +48,7 @@ module VivialConnect
   # => [ 7b226163...', [ #<VivialConnect::Log>, #<VivialConnect::Log>, #<VivialConnect::Log> ]]
   #
   #
-  
+
   class Log < Resource
 
     def self.find_by_time(options = {}) #:nodoc:
@@ -63,7 +63,7 @@ module VivialConnect
       numbers_template = Addressable::Template.new("#{uri}{?query*}")
       uri = numbers_template.expand(query: options).to_s
       VivialConnect::Client.instance.make_request('GET', uri)
-    end 
+    end
 
   end
 
