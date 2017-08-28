@@ -1,13 +1,15 @@
-Mon, 05 Jun 2017 15:49:24 -0500
-lib/vivialconnect/account.rb	Wed, 17 May 2017 16:20:44 -0500
-lib/vivialconnect/attachment.rb	Wed, 17 May 2017 16:03:19 -0500
-lib/vivialconnect/client.rb	Mon, 05 Jun 2017 15:19:10 -0500
-lib/vivialconnect/contact.rb	Wed, 17 May 2017 16:03:19 -0500
-lib/vivialconnect/log.rb	Wed, 17 May 2017 16:03:19 -0500
-lib/vivialconnect/message.rb	Tue, 23 May 2017 13:23:22 -0500
-lib/vivialconnect/number.rb	Tue, 23 May 2017 15:01:20 -0500
-lib/vivialconnect/resource.rb	Wed, 17 May 2017 16:03:19 -0500
-lib/vivialconnect/user.rb	Wed, 17 May 2017 16:03:19 -0500
-lib/vivialconnect/version.rb	Mon, 05 Jun 2017 15:22:48 -0500
-lib/vivialconnect/vivial_connect_error.rb	Wed, 17 May 2017 16:03:19 -0500
-lib/vivialconnect.rb	Mon, 05 Jun 2017 15:22:37 -0500
+Mon, 28 Aug 2017 12:36:07 -0500
+lib/vivialconnect/account.rb	Mon, 05 Jun 2017 15:50:42 -0500
+lib/vivialconnect/attachment.rb	Mon, 05 Jun 2017 15:50:42 -0500
+lib/vivialconnect/client.rb	Mon, 28 Aug 2017 11:32:47 -0500
+lib/vivialconnect/connector.rb	Mon, 28 Aug 2017 10:47:21 -0500
+lib/vivialconnect/contact.rb	Mon, 05 Jun 2017 15:50:42 -0500
+lib/vivialconnect/extra_connector_code.rb	Fri, 25 Aug 2017 10:17:47 -0500
+lib/vivialconnect/log.rb	Mon, 28 Aug 2017 10:37:25 -0500
+lib/vivialconnect/message.rb	Tue, 15 Aug 2017 13:31:43 -0500
+lib/vivialconnect/number.rb	Tue, 15 Aug 2017 14:28:19 -0500
+lib/vivialconnect/resource.rb	Wed, 23 Aug 2017 16:14:12 -0500
+lib/vivialconnect/user.rb	Tue, 15 Aug 2017 13:49:01 -0500
+lib/vivialconnect/version.rb	Mon, 28 Aug 2017 10:40:35 -0500
+lib/vivialconnect/vivial_connect_error.rb	Mon, 05 Jun 2017 15:50:42 -0500
+lib/vivialconnect.rb	Tue, 15 Aug 2017 13:12:40 -0500

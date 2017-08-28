@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class VivialConnect::Connector - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#class-VivialConnect::Connector-label-.all">.all</a>
+    <li><a href="#class-VivialConnect::Connector-label-.count">.count</a>
+    <li><a href="#class-VivialConnect::Connector-label-.create-28options-3D-7B-7D-29">.create(options={})</a>
+    <li><a href="#class-VivialConnect::Connector-label-.find-28id-29">.find(id)</a>
+    <li><a href="#class-VivialConnect::Connector-label-.update-28id-2C+options-3D-7B-7D-29">.update(id, options={})</a>
+    <li><a href="#class-VivialConnect::Connector-label-.delete-28id-29">.delete(id)</a>
+    <li><a href="#class-VivialConnect::Connector-label-23add_number-28number-29">#add_number(number)</a>
+    <li><a href="#class-VivialConnect::Connector-label-23delete_number-28number-29">#delete_number(number)</a>
+    <li><a href="#class-VivialConnect::Connector-label-23add_callback-28callback-29">#add_callback(callback)</a>
+    <li><a href="#class-VivialConnect::Connector-label-23delete_callback-28callback-29">#delete_callback(callback)</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Resource
+  
+</div>
+
+    
+    
+    
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-VivialConnect::Connector">
+  <h1 id="class-VivialConnect::Connector" class="class">
+    class VivialConnect::Connector
+  </h1>
+
+  <section class="description">
+    
+<h3 id="class-VivialConnect::Connector-label-.all">.all<span><a href="#class-VivialConnect::Connector-label-.all">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Returns an array containing ruby objects corresponding to all <a
+href="Connector.html">Connector</a> resources on your account</p>
+
+<pre>Example usage:
+
+VivialConnect::Connector.all
+=&gt; [#&lt;VivialConnect::Connector account_id=10XXX, active=true, callbacks=[{&quot;date_created&quot;=&gt;&quot;2017-08-21T20:41:46+00:00&quot;, &quot;date_modified&quot;=&gt;&quot;2017-08-21T20:41:46+00:00&quot;, &quot;event_type&quot;=&gt;&quot;incoming&quot;, &quot;message_type&quot;=&gt;&quot;text&quot;, &quot;method&quot;=&gt;&quot;POST&quot;, &quot;url&quot;=&gt;&quot;path/for/callback&quot;}, {&quot;date_created&quot;=&gt;&quot;2017-08-21T21:05:49+00:00&quot;, &quot;date_modified&quot;=&gt;&quot;2017-08-21T21:05:49+00:00&quot;, &quot;event_type&quot;=&gt;&quot;incoming_fallback&quot;, &quot;message_type&quot;=&gt;&quot;text&quot;, &quot;method&quot;=&gt;&quot;POST&quot;, &quot;url&quot;=&gt;&quot;path/for/backup/callback&quot;}], date_created=&quot;2017-08-21T19:41:01+00:00&quot;, date_modified=&quot;2017-08-21T19:41:01+00:00&quot;, id=54, more_numbers=false, name=&quot;List Sender&quot;, phone_numbers=[{&quot;phone_number&quot;=&gt;&quot;+1646493XXXX&quot;, &quot;phone_number_id&quot;=&gt;1XXX}, {&quot;phone_number&quot;=&gt;&quot;+1646494XXXX&quot;, &quot;phone_number_id&quot;=&gt;1XXX}]&gt; ...]</pre>
+
+<h3 id="class-VivialConnect::Connector-label-.count">.count<span><a href="#class-VivialConnect::Connector-label-.count">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Returns the amount of <a href="Connector.html">Connector</a> resources you
+have set up on your account</p>
+
+<pre>Example usage:
+
+VivialConnect::Connectors.count
+=&gt; 3</pre>
+
+<h3 id="class-VivialConnect::Connector-label-.create-28options-3D-7B-7D-29">.create(options={})<span><a href="#class-VivialConnect::Connector-label-.create-28options-3D-7B-7D-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Creates a record of the <a href="Connector.html">Connector</a> and returns
+it as a Ruby object.</p>
+
+<pre>Required parameter:
+
+name | String | &quot;Connector 1&quot;
+
+Example Usage
+
+VivialConnect::Connector.create(name: &quot;Connector 1&quot;) 
+=&gt; #&lt;VivialConnect::Connector account_id=10XXX, active=true, callbacks=[], date_created=&quot;2017-08-22T16:48:32+00:00&quot;, date_modified=&quot;2017-08-22T16:48:32+00:00&quot;, id=XXXX, more_numbers=false, name=&quot;Connector 1&quot;, phone_numbers=[]&gt;</pre>
+
+<h3 id="class-VivialConnect::Connector-label-.find-28id-29">.find(id)<span><a href="#class-VivialConnect::Connector-label-.find-28id-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Returns the <a href="Connector.html">Connector</a> resource referenced by
+the `id` value as a ruby object.</p>
+
+<pre>Required parameter:
+
+id | Fixnum | the id of the message you would like to retrieve
+
+Example usage:
+
+VivialConnect::Connector.find(5555)
+=&gt; #&lt;VivialConnect::Connector account_id=10XXX, active=true, callbacks=[], date_created=&quot;2017-08-22T16:48:32+00:00&quot;, date_modified=&quot;2017-08-22T16:48:32+00:00&quot;, id=XXXX, more_numbers=false, name=&quot;Connector 1&quot;, phone_numbers=[]&gt;</pre>
+
+<h3 id="class-VivialConnect::Connector-label-.update-28id-2C+options-3D-7B-7D-29">.update(id, options={})<span><a href="#class-VivialConnect::Connector-label-.update-28id-2C+options-3D-7B-7D-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Updates the <a href="Connector.html">Connector</a> resource with the
+provided id and returns it</p>
+
+<pre>Required parameters:
+
+id | Fixnum | 10000
+
+Example usage:
+
+VivialConnect::Connector.update(5555, name: &quot;New Connector Name&quot;)
+=&gt; #&lt;VivialConnect::Connector account_id=10XXX, active=true, callbacks=[], date_created=&quot;2017-08-22T16:48:32+00:00&quot;, date_modified=&quot;2017-08-22T16:48:32+00:00&quot;, id=XXXX, more_numbers=false, name=&quot;New Connector Name&quot;, phone_numbers=[]&gt;</pre>
+
+<h3 id="class-VivialConnect::Connector-label-.delete-28id-29">.delete(id)<span><a href="#class-VivialConnect::Connector-label-.delete-28id-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Deletes the <a href="Connector.html">Connector</a> resource with the
+provided id from your account and returns true. WARNING: this cannot be
+undone.</p>
+
+<pre>Required parameters:
+
+id | Fixnum | 10000
+
+Example usage:
+
+VivialConnect::Connector.delete(5555)
+=&gt; true</pre>
+
+<h3 id="class-VivialConnect::Connector-label-23add_number-28number-29">#add_number(number)<span><a href="#class-VivialConnect::Connector-label-23add_number-28number-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Adds a number resource to the <a href="Connector.html">Connector</a> object
+and saves it. If the <a href="Connector.html">Connector</a> object has not
+been saved prior, it will save for the first time during this process. If
+you wish to add more than one number to your <a
+href="Connector.html">Connector</a> at a time, pass the numbers in an Array
+i.e. [num_1, num_2, num_3]</p>
+
+<pre>Required parameters:
+
+number | VivialConnect::Number  
+
+Example usage:
+
+connector = VivialConnect::Connector.new
+number = VivialConnect::Number.all.first
+connector.add_number(number)
+=&gt; #&lt;VivialConnect::Connector account_id=10###, active=true, callbacks=[], date_created=&quot;2017-08-24T20:04:18+00:00&quot;, date_modified=&quot;2017-08-24T20:04:18+00:00&quot;, id=7##, more_numbers=false, name=nil, phone_numbers=[{&quot;phone_number&quot;=&gt;&quot;+1646493####&quot;, &quot;phone_number_id&quot;=&gt;1###}]&gt;</pre>
+
+<h3 id="class-VivialConnect::Connector-label-23delete_number-28number-29">#delete_number(number)<span><a href="#class-VivialConnect::Connector-label-23delete_number-28number-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Dissassociates a number from the <a href="Connector.html">Connector</a>.
+This does not release the number. You can still add it back or to another
+<a href="Connector.html">Connector</a>. If you wish to delete more than one
+number from your <a href="Connector.html">Connector</a> at a time, pass the
+numbers in an Array i.e. [num_1, num_2, num_3]</p>
+
+<pre>Required parameters:
+
+number | VivialConnect::Number
+
+Example usage:
+
+connector = VivialConnect::Connector.all.first
+number = VivialConnect::Number.all.first
+connector.delete_number(number)
+=&gt; #&lt;VivialConnect::Connector account_id=10###, active=true, callbacks=[], date_created=&quot;2017-08-24T20:04:18+00:00&quot;, date_modified=&quot;2017-08-24T20:04:18+00:00&quot;, id=7##, more_numbers=false, name=nil, phone_numbers=[{&quot;phone_number&quot;=&gt;&quot;+1646493####&quot;, &quot;phone_number_id&quot;=&gt;1###}]&gt;</pre>
+
+<h3 id="class-VivialConnect::Connector-label-23add_callback-28callback-29">#add_callback(callback)<span><a href="#class-VivialConnect::Connector-label-23add_callback-28callback-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Adds a callback resource to the <a href="Connector.html">Connector</a>
+object and saves it. If the <a href="Connector.html">Connector</a> object
+has not been saved prior, it will save for the first time during this
+process. If you wish to add more than one callback to your <a
+href="Connector.html">Connector</a> at a time, pass the callbacks in an
+Array i.e. [cb_1, cb_2, cb_3]</p>
+
+<pre>Required parameters for callback Hash:
+
+message_type | String | Can either be &quot;text&quot; or &quot;voice&quot;
+event_type   | String | Can be &quot;incoming&quot;, &quot;incoming_fallback&quot;, &quot;status&quot;
+url          | String | The URL that will receive callback request
+method       | String | Can be &quot;GET&quot;, &quot;POST&quot;, or &quot;PUT&quot;
+
+Example usage:
+
+connector = VivialConnect::Connector.new
+callback = {event_type: &quot;incoming&quot;, message_type: &quot;text&quot;, url: &quot;path/for/calback&quot;, method: &quot;GET&quot;}
+connector.add_callback(callback)
+=&gt; #&lt;VivialConnect::Connector account_id=10144, active=true, callbacks=[{&quot;date_created&quot;=&gt;&quot;2017-08-28T13:41:01+00:00&quot;, &quot;date_modified&quot;=&gt;&quot;2017-08-28T13:41:01+00:00&quot;, &quot;event_type&quot;=&gt;&quot;incoming&quot;, &quot;message_type&quot;=&gt;&quot;text&quot;, &quot;method&quot;=&gt;nil, &quot;url&quot;=&gt;&quot;path/for/calback&quot;}], date_created=&quot;2017-08-23T16:22:20+00:00&quot;, date_modified=&quot;2017-08-23T16:22:20+00:00&quot;, id=XX, more_numbers=false, name=&quot;Hello Connector&quot;, phone_numbers=[]&gt;</pre>
+
+<h3 id="class-VivialConnect::Connector-label-23delete_callback-28callback-29">#delete_callback(callback)<span><a href="#class-VivialConnect::Connector-label-23delete_callback-28callback-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Deletes a callback resource on the <a href="Connector.html">Connector</a>
+object. If you wish to delete more than one callback from your <a
+href="Connector.html">Connector</a> at a time, pass the callbacks in an
+Array i.e. [cb_1, cb_2, cb_3]</p>
+
+<pre>Required parameters for callback Hash:
+
+message_type | String | Can either be &quot;text&quot; or &quot;voice&quot;
+event_type   | String | Can be &quot;incoming&quot;, &quot;incoming_fallback&quot;, &quot;status&quot;
+
+Example usage:
+
+connector = VivialConnect::Connector.all.first
+number = VivialConnect::Connector.all.first
+connector.delete_callback({event_type: &quot;incoming&quot;, message_type: &quot;text&quot;})
+=&gt; #&lt;VivialConnect::Connector account_id=10XXX, active=true, callbacks=[], date_created=&quot;2017-08-25T14:51:04+00:00&quot;, date_modified=&quot;2017-08-25T14:51:04+00:00&quot;, id=XX, more_numbers=false, name=nil, phone_numbers=[]&gt;</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
