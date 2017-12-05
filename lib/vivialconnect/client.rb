@@ -3,6 +3,7 @@ require 'addressable'
 require 'digest'
 require 'openssl'
 require 'singleton'
+require 'json'
 
 module VivialConnect 
 
@@ -207,12 +208,22 @@ module VivialConnect
     def create_request_headers
       headers = {}
       headers['Content-Type'] = 'application/json'
-      headers['Host'] = 'api.vivialconnect.net'
+      headers['Host'] = host
       headers['X-Auth-Date'] = request_timestamp
       headers['X-Auth-SignedHeaders'] = 'accept;date;host'
       headers['Authorization'] = "HMAC" + " " + api_key + ":" + hmac_sha256
       headers['Date'] = date_for_date_header
       headers['Accept'] = 'application/json'
+      headers['User-Agent'] = 'VivialConnect RubyClient ' + Vivialconnect::VERSION
+
+      xUserAgent = {}
+      xUserAgent['lang'] = 'Ruby'
+      xUserAgent['lang_version'] = "#{RUBY_DESCRIPTION}"
+      xUserAgent['publisher'] = 'vivialconnect'
+      xUserAgent['client_version'] = Vivialconnect::VERSION
+      xUserAgent['platform'] = "#{RUBY_PLATFORM}"
+
+      headers['X-VivialConnect-User-Agent'] = JSON.generate(xUserAgent)
       headers
     end
 
